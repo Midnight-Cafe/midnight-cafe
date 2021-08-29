@@ -19,7 +19,7 @@ The project uses Prettier to enforce code styling. To set it up so that VSCode f
 1. Install the [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) vscode extension.
 2. Open your vscode `settings.json` and add the following lines.
 
-```json
+```jsonc
 {
   ..
   "editor.formatOnSave": true,
