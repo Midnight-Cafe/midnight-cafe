@@ -11,7 +11,6 @@ const Home: NextPage = () => {
         <meta name="description" content="The social hub for developers." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <Hero>
           <Hero.Title>The Midnight Café</Hero.Title>
