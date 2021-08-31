@@ -1,10 +1,25 @@
-import { Hero } from "../components/Hero/Hero";
-import Navigation from "../components/Navigation";
-import styles from "../styles/Home.module.css";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+import { Hero } from "../components/Hero/Hero";
+import MemberWall from "../components/MemberWall";
+import Navigation from "../components/Navigation";
+import UpcomingEvents from '../components/UpcomingEvents'
+import styles from "../styles/Home.module.css";
+
+
+//api call to get list of members from the github org
+export async function getStaticProps() {
+  const res = await fetch('https://api.github.com/orgs/Midnight-Cafe/members')
+  const members = await res.json()
+
+  return {
+    props: { members },
+  };
+}
+
+// lint-ignore:next-line Property 'members' does not exist on type
+const Home: NextPage = ({ members }) => {
   return (
     <div>
       <Navigation />
@@ -26,6 +41,12 @@ const Home: NextPage = () => {
             </Hero.Subtitle>
             <Hero.CTA>Join Now!</Hero.CTA>
           </Hero>
+          <div className={styles.MemberWall}>
+            <MemberWall members={members} />
+          </div>
+          <div className={styles.UpcomingEvents}>
+            <UpcomingEvents />
+          </div>
         </main>
       </div>
     </div>
