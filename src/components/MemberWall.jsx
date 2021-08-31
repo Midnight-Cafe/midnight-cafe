@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 
-
 function MemberWall({ members }) {
   return (
     <Container>
+      <h3>Members</h3>
       <Row>
         {members.map((member) => (
           <Col key={member.login} md={4}>
@@ -16,7 +16,5 @@ function MemberWall({ members }) {
     </Container>
   );
 }
-
-
 
 export default MemberWall;

@@ -7,19 +7,12 @@ import Navigation from "../components/Navigation";
 import UpcomingEvents from '../components/UpcomingEvents'
 import styles from "../styles/Home.module.css";
 
-
-//api call to get list of members from the github org
-export async function getStaticProps() {
-  const res = await fetch('https://api.github.com/orgs/Midnight-Cafe/members')
-  const members = await res.json()
-
-  return {
-    props: { members },
-  };
+interface Props {
+  members: any;
 }
 
 // lint-ignore:next-line Property 'members' does not exist on type
-const Home: NextPage = ({ members }) => {
+const Home: NextPage<Props> = ({ members }) => {
   return (
     <div>
       <Navigation />
@@ -52,5 +45,12 @@ const Home: NextPage = ({ members }) => {
     </div>
   );
 };
+
+//api call to get list of members from the github org
+Home.getInitialProps = async (ctx) => {
+  const res = await fetch('https://api.github.com/orgs/Midnight-Cafe/members')
+  const members = await res.json()
+  return { members: members };
+}
 
 export default Home;
