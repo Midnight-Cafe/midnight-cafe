@@ -1,4 +1,4 @@
-import styles from "../styles/Home.module.css";
+import styles from "@styles/Home.module.css";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -7,8 +7,6 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>The Midnight Café</title>
-        <meta name="description" content="The social hub for developers." />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
