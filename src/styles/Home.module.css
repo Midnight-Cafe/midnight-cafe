@@ -1,5 +1,5 @@
 .container {
-  min-height: 100vh;
+  min-height: 90vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -8,13 +8,21 @@
   height: 100vh;
 }
 
+.MemberWall {
+  padding-top: 5rem;
+}
+
+.UpcomingEvents {
+  padding-top: 5rem;
+}
+
 .main {
   padding: 5rem 0;
   flex: 1;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .footer {
